@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">DojoComposeNavigation</string>
+  <string name="pre_home_title">¿Qué quieres comprar hoy?</string>
+  <string name="empty_cart">Aún no tienes productos agregados en\ntu carrito: %s</string>
+  <string name="home">Inicio</string>
+  <string name="cart">Carrito</string>
+  <string name="search_hint">Buscar en Walmart</string>
+
+  <string-array name="home_categories_beer">
+
+  </string-array>
+
+</resources>

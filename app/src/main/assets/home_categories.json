@@ -1,0 +1,47 @@
+[
+  {
+    "category_title": "Los mejores precios en cervezas",
+    "items": [
+      {
+        "image_url": "https://images.heb.com/is/image/HEBGrocery/001453284",
+        "name": "Cerveza Victoria 6 Botellas",
+        "price": 150
+      },
+      {
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiTXV_hqigGQZi4BzBXA38CLjOrmqc_K6D6PpBBmkPNME7wpLE3oYMFcf8LVP597M-s80&usqp=CAU",
+        "name": "Cerveza Corona Extra 6 Botellas",
+        "price": 194
+      }
+    ]
+  },
+  {
+    "category_title": "Despensa",
+    "items": [
+      {
+        "image_url": "https://walmartni.vtexassets.com/arquivos/ids/217136/Pan-Bimbo-Para-Sandwich-Blanco-Xg-720gr-1-7960.jpg?v=637889388575770000",
+        "name": "Pan Bimbo XG 720g",
+        "price": 47.5
+      },
+      {
+        "image_url": "https://i5.walmartimages.com/asr/8eb2afe4-d363-4bbb-8dca-15c422c37df1.5520948dadfe4939c7afd5e856cb5b8f.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        "name": "Lomo de atún Dolores aleta",
+        "price": 36.9
+      },
+      {
+        "image_url": "https://m.media-amazon.com/images/I/61hxe7ajQrL._SX679_.jpg",
+        "name": "Tortillas Tia Rosa de harina 22 pzas",
+        "price": 27
+      },
+      {
+        "image_url": "https://www.heb.com.mx/media/catalog/product/cache/9f5ec31302878493d9ed0ac40a398e12/3/7/371417_image.jpg",
+        "name": "Leche 100% de Vaca Santa Clara Entera 1L",
+        "price": 24.5
+      },
+      {
+        "image_url": "https://res.cloudinary.com/walmart-labs/image/upload/w_960,dpr_auto,f_auto,q_auto:best/gr/images/product-images/img_large/00750103045995L.jpg",
+        "name": "Cacahuates Hot Nuts Original 200g",
+        "price": 36.9
+      }
+    ]
+  }
+]
