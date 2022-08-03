@@ -2,9 +2,6 @@ package com.markoid.dojocomposenavigation.commons.navigation
 
 // https://proandroiddev.com/safe-compose-arguments-an-improved-way-to-navigate-in-jetpack-compose-95c84722eec2
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
@@ -89,15 +86,3 @@ fun WalmartAnimNavigation() {
     }
   }
 }
-
-@OptIn(ExperimentalAnimationApi::class)
-val enterTransition = slideInHorizontally(initialOffsetX = { 1000 }, animationSpec = tween(700))
-
-@OptIn(ExperimentalAnimationApi::class)
-val exitTransition = slideOutHorizontally(targetOffsetX = { -1000 }, animationSpec = tween(700))
-
-@OptIn(ExperimentalAnimationApi::class)
-val popEnterTransition = slideInHorizontally(initialOffsetX = { -1000 }, animationSpec = tween(700))
-
-@OptIn(ExperimentalAnimationApi::class)
-val popExitTransition = slideOutHorizontally(targetOffsetX = { 1000 }, animationSpec = tween(700))
