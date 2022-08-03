@@ -8,6 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.markoid.dojocomposenavigation.prehome.enums.BrandConfiguration
+import com.markoid.dojocomposenavigation.prehome.enums.BrandConfiguration.EA
+import com.markoid.dojocomposenavigation.prehome.enums.BrandConfiguration.EXPRESS
 import com.markoid.dojocomposenavigation.prehome.enums.BrandConfiguration.OD
 
 @Composable
@@ -31,5 +33,5 @@ fun PreHomeListOfBrands(
 @Composable
 @Preview(showBackground = true)
 fun PreHomeListOfBrandsPreview() {
-  PreHomeListOfBrands(listOf(OD))
+  PreHomeListOfBrands(listOf(OD, EXPRESS, EA))
 }
