@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.markoid.dojocomposenavigation.commons.navigation.WalmartNavigation
+import com.markoid.dojocomposenavigation.commons.navigation.WalmartAnimNavigation
 import com.markoid.dojocomposenavigation.commons.theme.DojoComposeNavigationTheme
 import com.markoid.dojocomposenavigation.theme.presentation.viewmodel.ThemeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +38,7 @@ fun WalmartApp(themeViewModel: ThemeViewModel = hiltViewModel()) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
       ) {
-        WalmartNavigation()
+        WalmartAnimNavigation()
       }
     }
   }
