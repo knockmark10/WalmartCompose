@@ -21,17 +21,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.markoid.dojocomposenavigation.R
 import com.markoid.dojocomposenavigation.cart.widgets.CartToolbar
 import com.markoid.dojocomposenavigation.commons.theme.WalmartBlue
+import com.markoid.dojocomposenavigation.commons.utils.previewNavController
 
 @Composable
 fun CartScreen(
   cartId: String,
-  isAnonymous: Boolean
+  isAnonymous: Boolean,
+  navController: NavController
 ) {
   Scaffold(topBar = {
-    CartToolbar(onBackPressed = { })
+    CartToolbar(onBackPressed = { navController.popBackStack() })
   }) {
     Column(
       modifier = Modifier.fillMaxSize(),
@@ -59,5 +62,9 @@ fun CartScreen(
 @Composable
 @Preview(showBackground = true)
 fun CartScreenPreview() {
-  CartScreen(cartId = "94c123", isAnonymous = true)
+  CartScreen(
+    cartId = "94c123",
+    isAnonymous = true,
+    navController = previewNavController()
+  )
 }
