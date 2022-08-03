@@ -69,7 +69,7 @@ fun WalmartAnimNavigation() {
     }
 
     // Cart Screen
-    val cartRoute = NavScreens.Home().name
+    val cartRoute = NavScreens.Cart().name
     composable(
       route = "$cartRoute?$CART_ID={$CART_ID},$IS_ANONYMOUS={$IS_ANONYMOUS}",
       arguments = listOf(navArgument(name = BRAND) { type = NavType.StringType }),
