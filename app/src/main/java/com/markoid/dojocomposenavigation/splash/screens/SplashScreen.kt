@@ -16,12 +16,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.markoid.dojocomposenavigation.R
+import com.markoid.dojocomposenavigation.commons.navigation.NavScreens
+import com.markoid.dojocomposenavigation.commons.navigation.navigate
 import com.markoid.dojocomposenavigation.commons.theme.WalmartBlue
+import com.markoid.dojocomposenavigation.commons.utils.previewNavController
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(navController: NavController) {
   // Creating scale animation value
   val scale = remember { Animatable(initialValue = 0f) }
 
@@ -36,6 +40,7 @@ fun SplashScreen() {
     )
     // After animation is over, wait for 1 sec
     delay(1_000L)
+    navController.navigate(NavScreens.PreHome)
   }
 
   // Walmart Logo placed on the center
@@ -57,5 +62,5 @@ fun SplashScreen() {
 @Composable
 @Preview(showBackground = true)
 fun SplashScreenPreview() {
-  SplashScreen()
+  SplashScreen(navController = previewNavController())
 }

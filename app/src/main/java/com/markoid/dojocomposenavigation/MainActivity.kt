@@ -12,10 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.markoid.dojocomposenavigation.commons.navigation.WalmartNavigation
 import com.markoid.dojocomposenavigation.commons.theme.DojoComposeNavigationTheme
-import com.markoid.dojocomposenavigation.home.presentation.screens.HomeScreen
-import com.markoid.dojocomposenavigation.prehome.enums.BrandConfiguration.OD
-import com.markoid.dojocomposenavigation.prehome.screens.PreHomeScreen
 import com.markoid.dojocomposenavigation.theme.presentation.viewmodel.ThemeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,10 +38,7 @@ fun WalmartApp(themeViewModel: ThemeViewModel = hiltViewModel()) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
       ) {
-        // SplashScreen()
-        // PreHomeScreen()
-        HomeScreen(brand = OD)
-        // CartScreen(cartId = "", isAnonymous = true)
+        WalmartNavigation()
       }
     }
   }

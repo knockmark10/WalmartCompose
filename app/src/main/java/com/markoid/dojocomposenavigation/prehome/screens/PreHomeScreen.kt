@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,16 +21,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.markoid.dojocomposenavigation.R.drawable
 import com.markoid.dojocomposenavigation.R.string
+import com.markoid.dojocomposenavigation.commons.navigation.NavScreens
+import com.markoid.dojocomposenavigation.commons.navigation.navigate
 import com.markoid.dojocomposenavigation.commons.theme.PreHomeGreyLight
+import com.markoid.dojocomposenavigation.commons.utils.previewNavController
 import com.markoid.dojocomposenavigation.prehome.viewmodels.PreHomeViewModel
 import com.markoid.dojocomposenavigation.prehome.widgets.PreHomeListOfBrands
-import com.markoid.dojocomposenavigation.theme.presentation.functions.setBrandTheme
 
 @Composable
-fun PreHomeScreen(preHomeViewModel: PreHomeViewModel = viewModel()) {
+fun PreHomeScreen(
+  navController: NavController,
+  preHomeViewModel: PreHomeViewModel = viewModel()
+) {
   val systemUiController = rememberSystemUiController()
   systemUiController.setSystemBarsColor(color = PreHomeGreyLight)
   Column(
@@ -57,7 +62,7 @@ fun PreHomeScreen(preHomeViewModel: PreHomeViewModel = viewModel()) {
     Spacer(modifier = Modifier.height(40.dp))
     PreHomeListOfBrands(
       brands = preHomeViewModel.brandList,
-      onBrandClicked = { /*Go to home with selected brand*/ }
+      onBrandClicked = { navController.navigate(NavScreens.Home(it)) }
     )
   }
 }
@@ -65,5 +70,5 @@ fun PreHomeScreen(preHomeViewModel: PreHomeViewModel = viewModel()) {
 @Composable
 @Preview(showBackground = true)
 fun PreHomeScreenPreview() {
-  PreHomeScreen()
+  PreHomeScreen(navController = previewNavController())
 }

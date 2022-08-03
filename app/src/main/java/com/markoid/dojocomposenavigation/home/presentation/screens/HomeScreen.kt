@@ -6,6 +6,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.markoid.dojocomposenavigation.commons.navigation.NavScreens
+import com.markoid.dojocomposenavigation.commons.navigation.navigate
 import com.markoid.dojocomposenavigation.commons.utils.previewNavController
 import com.markoid.dojocomposenavigation.home.presentation.widgets.HomeBottomNavigationBar
 import com.markoid.dojocomposenavigation.home.presentation.widgets.HomeNavigationHost
@@ -18,6 +20,7 @@ import com.markoid.dojocomposenavigation.theme.presentation.viewmodel.ThemeViewM
 @Composable
 fun HomeScreen(
   brand: BrandConfiguration,
+  navController: NavController,
   themeViewModel: ThemeViewModel = hiltViewModel()
 ) {
   setBrandTheme(brand, themeViewModel)
@@ -25,8 +28,15 @@ fun HomeScreen(
   Scaffold(
     topBar = {
       HomeToolbar(
-        onNavigationClicked = { },
-        onShoppingCartClicked = { }
+        onNavigationClicked = { navController.popBackStack() },
+        onShoppingCartClicked = {
+          navController.navigate(
+            NavScreens.Cart(
+              cartId = "12345679",
+              isAnonymous = false
+            )
+          )
+        }
       )
     },
     content = { HomeNavigationHost(navController = bottomNavController) },
@@ -37,5 +47,5 @@ fun HomeScreen(
 @Composable
 @Preview(showBackground = true)
 fun HomeScreenPreview() {
-  HomeScreen(brand = OD)
+  HomeScreen(brand = OD, navController = previewNavController())
 }
